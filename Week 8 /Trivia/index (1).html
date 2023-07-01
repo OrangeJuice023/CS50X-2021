@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+        function wrong()
+          {
+            document.querySelector(".response_first").textContent = 'Wrong!';
+          }
+
+        function right()
+          {
+            document.querySelector(".response_first").textContent = 'Correct!';
+          }
+
+
+        function revert()
+        {
+            var redux = document.getElementsByClassName("reset");
+            for(var i = 0; i < redux.length; i++)
+            {
+            (redux[i]).style.backgroundColor = '#d9edff';
+            }
+
+        }
+
+         document.addEventListener('DOMContentLoaded', function() {
+            let scope_the_whole_page = document.querySelector('body');
+            document.querySelector('#correct').onclick = function() {
+		revert();
+                document.querySelector('#correct').style.backgroundColor = '#00FF00';
+                right();
+                };
+            document.querySelector('#error1').onclick = function() {
+		revert();
+                document.querySelector('#error1').style.backgroundColor = '#FF0000';
+                wrong();
+                };
+            document.querySelector('#error2').onclick = function() {
+        revert();
+                document.querySelector('#error2').style.backgroundColor = '#FF0000';
+                wrong();
+                };
+            document.querySelector('#error3').onclick = function() {
+        revert();
+                document.querySelector('#error3').style.backgroundColor = '#FF0000';
+                wrong();
+                };
+                document.querySelector('#error4').onclick = function() {
+        revert();
+                document.querySelector('#error4').style.backgroundColor = '#FF0000';
+                wrong();
+                };
+                document.querySelector('#error5').onclick = function() {
+        revert();
+                document.querySelector('#error5').style.backgroundColor = '#FF0000';
+                wrong();
+                };
+
+            let SubmitButton = document.querySelector("#check");
+            SubmitButton.addEventListener("click", function() {
+                    if (document.querySelector('input').value.toUpperCase() == "PHILIPPINES") {
+                         document.querySelector('input').style.backgroundColor = "#00FF00";
+                        document.querySelector("#response_second").innerHTML = "Correct!";
+                    } else {
+                         document.querySelector('input').style.backgroundColor = "#FF0000";
+                        document.querySelector("#response_second").innerHTML = "Incorrect!";
+                    }
+                });
+    });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3> When did Spain conquered the Philippine Country?</h3>
+                <button  id = "error1" class = "reset"> 1621</button>
+                <button  id = "error2" class = "reset"> 1796</button>
+                <button  id = "error3" class= "reset"> 1985</button>
+                <button  id = "error4" class = "reset"> 2021</button>
+                <button  id = "correct" class = "reset"> 1521</button>
+                <button  id = "error5" class = "reset"> 2000</button>
+
+                <p class = "response_first"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                 <h3>In what country does Duterte live?</h3>
+                 
+                 <input type="text">
+                 <button id="check">Check Answer</button>
+                 
+                 <h2 id="response_second"></h2>
+            </div>
+
+        </div>
+    </body>
+</html>
