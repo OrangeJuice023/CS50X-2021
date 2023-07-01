@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Main
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+  
+  <thead>
+    <th>Symbol</th>
+    <th>Name</th>
+    <th>Shares</th>
+    <th>Price (USD)</th>
+    <th>TOTAL (USD)</th>
+  </thead>
+  
+  <tbody>
+    {% for queried_stock in portfolio %}
+    <tr>
+      <td>{{ queried_stock["symbol"] }}</td>
+      <td>{{ queried_stock["name"] }}</td>
+      <td>{{ queried_stock["Usershares"] }}</td>
+      <td>{{ queried_stock.price | usd }}</td>
+      <td>{{ usd(queried_stock["total"])}}</td>
+    </tr>
+    {% endfor %}
+    
+    <tr>
+      <td>CASH</td>
+      <td colspan="3"></td>
+      <td>{{usd(cash)}}</td>
+    </tr>
+    
+  <tfoot>
+    <td colspan="4"></td>
+    <td><b>{{ user_total | usd }}</b></td>
+  </tfoot>
+  
+  </tbody>
+  
+</table>
+{% endblock %}

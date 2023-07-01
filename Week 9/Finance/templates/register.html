@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        
+        <div class="form-group">
+            <br><p class='error'>Must contain at least 10 characters, <br> including a letter and a number</p>
+            <input id="initial_pass" class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm User Password" type="password">
+        </div>
+        
+        <button id="confirm_password" class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <script>
+    // validates password
+        document.getElementById("confirm_password").disabled = true;
+        document.getElementById("initial_pass").onkeyup = function() {
+            let password = document.getElementById("initial_pass").value;
+
+            if (password.length > 10 && password.match(/^[0-9a-z]+$/i) && password.match(/\d/) && password.match(/[a-z]/i)){
+                document.getElementById("confirm_password").disabled = false;
+            }
+            else {
+                document.getElementById("confirm_password").disabled = true;
+            }
+        }
+    </script>
+{% endblock %}

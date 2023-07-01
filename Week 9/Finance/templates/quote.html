@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <Label for="shares">Stock You Want Quote:</Label></br>
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Pick a Stock e.g NFLX" type="text">
+        </div>
+
+        <button style="width: 150px" class="btn btn-primary" type="submit">Quote a Stock</button>
+
+        {% if invalid %}
+        <div class="alert alert-warning" role="alert" > The selected quote of {{the_quote}} is invalid! </div>
+        {% endif %}
+
+    </form>
+{% endblock %}
