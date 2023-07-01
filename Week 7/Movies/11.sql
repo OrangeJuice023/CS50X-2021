@@ -1,0 +1,1 @@
+SELECT DISTINCT movies.title FROM stars JOIN movies on stars.movie_id = movies.id JOIN ratings ON ratings.movie_id = movies.id JOIN people ON stars.person_id = people.id  WHERE people.name LIKE "%Chadwick Boseman%" ORDER BY ratings.rating DESC LIMIT 5;
