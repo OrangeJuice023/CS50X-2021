@@ -7,10 +7,5 @@
 -Readability
 
 
--Bulbs
-
-
 -Caesar
 
-
--Wordle 50
