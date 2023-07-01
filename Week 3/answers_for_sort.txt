@@ -1,0 +1,13 @@
+sort1 uses: bubblesort
+
+How do you know?: The real time record was the slowest time in sorting an unsorted array and referring to the lecture about the different types of sort, I can conclude that sort 1 is the bubble sort. It also perfomed faster in sorting a sorted array 
+than sort 3 so I also use that as a support.
+
+sort2 uses: Mergesort
+
+How do you know?: The real time record was the fastest and also it has the fastest algorithm and referring to the lecture, I can conclude that sort 2 uses the merge sort. 
+
+sort3 uses: selection sort
+
+How do you know?: The real time record in sorting unsorted array is faster than sort 1 so I conclude that sort 3 uses selection sort.
+
